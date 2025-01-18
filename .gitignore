@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+venv/
+.env
+*.npy
+*.pkl
+.DS_Store
+**/.DS_Store
+*.log
+.pytest_cache/
+.mypy_cache/
+.idea/
+.vscode/
+
+# Large catalog / retrieval artifacts (user-provided locally)
+data/*.csv
+
+# Local runtime config (copy from configs/config.example.json)
+/config.json

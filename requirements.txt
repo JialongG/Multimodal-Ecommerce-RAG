@@ -1,0 +1,11 @@
+transformers
+torch
+faiss-cpu
+flask
+pillow
+requests
+numpy
+pandas
+ollama
+markdown
+pytest

@@ -1,0 +1,12 @@
+{
+  "llm_model": "qwen2.5:7b",
+  "ollama_host": "http://127.0.0.1:11434",
+  "retrieval_top_k": 5,
+  "clip_model_name": "openai/clip-vit-base-patch32",
+  "data_csv_path": "data/preprocessed_data.csv",
+  "embeddings_path": "data/clip_embeddings.npy",
+  "product_ids_path": "data/product_ids.pkl",
+  "flask_host": "127.0.0.1",
+  "flask_port": 5000,
+  "flask_debug": false
+}

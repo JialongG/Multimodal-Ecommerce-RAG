@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multimodal e-commerce assistant</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        textarea, input[type=file] {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 8px;
+            font-size: 14px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3c8dbc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #367fa9;
+        }
+        img {
+            max-height: 200px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .response img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multimodal e-commerce assistant</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Enter your product question:</label><br>
+        <textarea name="user_query" rows="3" placeholder="e.g. What is this item used for?">{{ user_query }}</textarea><br>
+
+        <label>Upload a product image (optional):</label><br>
+        <input type="file" name="image" accept="image/*"><br>
+
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if image_preview %}
+        <h3>Uploaded image</h3>
+        <img src="data:image/jpeg;base64,{{ image_preview }}" alt="Uploaded Image">
+    {% endif %}
+
+    {% if response %}
+        <h3>Assistant response</h3>
+        <div class="response">{{ response|safe }}</div>
+    {% endif %}
+</body>
+</html>
